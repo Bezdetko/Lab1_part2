@@ -30,10 +30,9 @@ public class Book {
     }
     
     public void setName(String name) {
-        if (name!=null && !name.equals(""))
-        this.name = name;
-        else throw new IllegalArgumentException("Имя книги не может быть пустым");
-        
+        if (name==null || name.trim().equals(""))
+            throw new IllegalArgumentException("Название книги не должно быть пустой ссылкой или незаполненной строкой");
+        this.name = name;                
 }
 
     public int getYear() {
@@ -41,7 +40,7 @@ public class Book {
     }
         public void setYear(int year) {
         if(year <= 0)
-            throw new IllegalArgumentException("Год издания должен быть больше нуля");
+            throw new IllegalArgumentException("Год издания должен быть строго больше нуля");
         this.year = year;
     }
 
@@ -55,8 +54,8 @@ public class Book {
         return authors;
     }
         public void setAuthors(String[] authors) {
-            if (authors == null)
-                throw new IllegalArgumentException("массив авторов не должен содержать пустых ссылок");
+            if (authors == null || name.trim().equals(""))
+                throw new IllegalArgumentException("Массив авторов не должен содержать пустых ссылок или незаполненных строк");
             this.authors = authors;    
         }
         
@@ -70,14 +69,14 @@ public class Book {
     
     public void setPublishingHouse(PublishingHouse publishingHouse) {
         if(publishingHouse == null)    
-            throw new IllegalArgumentException("Book name can't be null.");
+            throw new IllegalArgumentException("Издательство не должно быть пустой ссылкой");
         this.publishingHouse = publishingHouse;        
     }
     
     
     public String getAuthorByIndex(int index) {
     if ( authors==null || index <0 ||index > authors.length - 1)
-        throw new IllegalArgumentException("не верный индекс автора");
+        throw new IllegalArgumentException("Не верный индекс автора");
     return authors[index];   
     }
             
