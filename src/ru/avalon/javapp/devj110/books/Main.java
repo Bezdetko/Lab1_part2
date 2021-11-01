@@ -21,8 +21,7 @@ public class Main {
         };
         
         Book.printAll(books);
-    
-    
+        
         publishingHouse3.setCity("Санкт-Петербург");
        
         System.out.println();
