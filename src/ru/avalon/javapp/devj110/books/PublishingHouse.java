@@ -3,7 +3,7 @@ package ru.avalon.javapp.devj110.books;
 public class PublishingHouse {
     private String name;
     private String city;
-         
+        
     
     public PublishingHouse(String name, String city) {
     setName(name);
@@ -29,5 +29,4 @@ public class PublishingHouse {
             throw new IllegalArgumentException("Город издетельста не должен быть пустой ссылкой или незаполненной строкой");
         this.city = city;
     }
-
 }
